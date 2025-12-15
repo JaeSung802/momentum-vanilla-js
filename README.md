@@ -11,7 +11,7 @@
 
 배포 후 링크를 여기에 추가하세요:
 
-- GitHub Pages: `https://YOUR-GITHUB-ID.github.io/REPO-NAME/`
+- GitHub Pages: `https://jaesung802.github.io/momentum-vanilla-js/`
 
 ---
 
@@ -68,3 +68,4 @@
     ├── 0.jpeg
     ├── 1.jpeg
     └── 2.jpeg
+```
