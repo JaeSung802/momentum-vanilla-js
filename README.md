@@ -9,9 +9,7 @@
 
 ## ✨ Demo
 
-배포 후 링크를 여기에 추가하세요:
-
-- GitHub Pages: `https://jaesung802.github.io/momentum-vanilla-js/`
+- GitHub Pages: https://jaesung802.github.io/momentum-vanilla-js/
 
 ---
 

@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Momentum App</title>
+  <meta name="author" content="JaeSung Han" />
+  <meta
+    name="description"
+    content="A Momentum-style Chrome app built with vanilla JavaScript by JaeSung."
+  />
+  <title>Momentum Clone - Vanilla JS | JaeSung Han</title>
   <meta
     name="description"
     content="A simple Momentum-style Chrome app built with vanilla JavaScript."
@@ -11,6 +16,22 @@
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
+  <!-- 언어 / 테마 컨트롤 -->
+  <div class="controls">
+    <div class="controls__lang">
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+    </div>
+    <button
+      type="button"
+      id="theme-toggle"
+      class="theme-toggle"
+      aria-label="Toggle light/dark theme"
+    >
+      🌙
+    </button>
+  </div>
+
   <!-- Login -->
   <form class="hidden" id="login-form" autocomplete="off">
     <input
@@ -55,5 +76,6 @@
   <script src="./js/background.js"></script>
   <script src="./js/todo.js"></script>
   <script src="./js/weather.js"></script>
+  <script src="./js/settings.js"></script>
 </body>
 </html>
