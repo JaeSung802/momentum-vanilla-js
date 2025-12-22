@@ -6,10 +6,10 @@ const greetingElement = document.querySelector("#greeting");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
-const LANGUAGE_KEY = "language";
+// const LANGUAGE_KEY = "language";
 
 function getCurrentLanguage() {
-  const stored = localStorage.getItem(LANGUAGE_KEY);
+  const stored = localStorage.getItem("language");
   return stored === "en" || stored === "ko" ? stored : "ko";
 }
 

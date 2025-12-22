@@ -3,20 +3,27 @@
 const quoteTextElement = document.querySelector("#quote span:first-child");
 const quoteAuthorElement = document.querySelector("#quote span:last-child");
 
-// Quotable API에서 랜덤 명언 1개 가져오기
+// 새 랜덤 명언 API (Quotable 대체)
+// 참고: https://motivational-spark-api.vercel.app/api/
+const QUOTE_API_URL =
+  "https://motivational-spark-api.vercel.app/api/quotes/random";
+
+// API에서 랜덤 명언 가져오기
 async function fetchRandomQuote() {
+  if (!quoteTextElement || !quoteAuthorElement) return;
+
   try {
-    const response = await fetch("https://api.quotable.io/quotes/random");
+    const response = await fetch(QUOTE_API_URL);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    // /quotes/random 의 응답 형태는 [ { content, author, ... } ] 배열
+    // 응답 예시: { "author": "Anonymous", "quote": "..." }
     const data = await response.json();
-    const randomQuote = data[0];
 
-    const { content, author } = randomQuote;
+    const content = data.quote || "Stay hungry, stay foolish.";
+    const author = data.author || "Unknown";
 
     renderQuote(content, author);
   } catch (error) {
@@ -25,15 +32,13 @@ async function fetchRandomQuote() {
   }
 }
 
-// 명언/저자 화면에 출력
+// 화면에 명언/저자 표시
 function renderQuote(content, author) {
-  if (!quoteTextElement || !quoteAuthorElement) return;
-
   quoteTextElement.textContent = content;
   quoteAuthorElement.textContent = `- ${author}`;
 }
 
-// API가 실패했을 때 사용할 기본 문구 (배열 X, 단일 값만 사용)
+// API 실패 시 기본 문구
 function renderFallbackQuote() {
   const fallbackContent = "Stay hungry, stay foolish.";
   const fallbackAuthor = "Steve Jobs";
@@ -41,5 +46,5 @@ function renderFallbackQuote() {
   renderQuote(fallbackContent, fallbackAuthor);
 }
 
-// 페이지 로드 시 바로 실행
+// 페이지 로드 시 실행
 fetchRandomQuote();
