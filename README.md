@@ -9,7 +9,7 @@
 
 ## ✨ Demo
 
-- GitHub Pages: https://jaesung802.github.io/momentum-vanilla-js/
+- GitHub Pages: https://jaesung802.github.io/vanilla-js-momentum/
 
 ---
 
